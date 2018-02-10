@@ -1,8 +1,8 @@
 {
 {% for type, items in composer_auth.items() %}
 "{{type}}": {
-  {% for item in items %}
-    "{{ item.path }}": {
+  {% for url, item in items.items() %}
+    "{{ url }}": {
         "username": "{{ item.username }}",
         "password": "{{ item.password }}"
         }{% if not loop.last %},{% endif %}
